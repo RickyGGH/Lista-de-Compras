@@ -1,0 +1,10 @@
+<div class="product-card">
+  <p><strong>Store Name:</strong> <%= @product[:product].store_name %></p>
+  <p><strong>Store Section:</strong> <%= @product[:product].store_section.name %></p>
+  <p><strong>Product:</strong> <%= @product[:product].name %></p>
+  <p><strong>Quantity:</strong> <%= @product[:product].quantity %></p>
+  <label>
+    <input type="checkbox" <% if @product[:product].purchased %> checked <% end %>>
+    Purchased
+  </label>
+</div>

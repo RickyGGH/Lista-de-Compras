@@ -3,8 +3,4 @@ class ProductGroupComponent < ViewComponent::Base
     @date = date
     @products = products
   end
-
-  def call
-    render
-  end
 end

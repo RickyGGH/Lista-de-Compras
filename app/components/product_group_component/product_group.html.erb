@@ -1,6 +1,0 @@
-<div class="product-group">
-  <h2><%= @date.strftime("%A, %d de %B de %Y") %></h2>
-  <% @products.each do |product| %>
-    <%= render(ProductCardComponent.new(product: product)) %>
-  <% end %>
-</div>
