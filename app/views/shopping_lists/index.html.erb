@@ -1,0 +1,7 @@
+<h1>Shopping List</h1>
+
+<%= render(ProductGroupComponent.new(date: @latest_date, products: @latest_products)) %>
+
+<% @other_product_groups.each do |date, products| %>
+  <%= render(ProductGroupComponent.new(date: date, products: products)) %>
+<% end %>

@@ -4,6 +4,6 @@ class ProductCardComponent < ViewComponent::Base
   end
 
   def render
-    render(:product_card)
+    render
   end
 end
