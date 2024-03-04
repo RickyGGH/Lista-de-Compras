@@ -4,8 +4,8 @@
   padding: 10px;
   margin-bottom: 10px;
   display: grid;
-  grid-template-columns: repeat(5, 1fr); /* Creamos 5 columnas de igual ancho */
-  gap: 5px; /* Añadimos un espacio entre las columnas */
+  grid-template-columns: repeat(5, 1fr);
+  gap: 5px;
 }
 
 .product-card p {
