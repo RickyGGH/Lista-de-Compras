@@ -7,8 +7,8 @@ Rails.application.routes.draw do
   # get "up" => "rails/health#show", as: :rails_health_check
   root to: 'shopping_lists#index'
   # config/routes.rb
-  resources :products, only: [:create]
-  resources :shopping_lists, only: [:index, :create]
+  resources :products, only: [:create, :update]
+  resources :shopping_lists, only: [:index, :create, :update]
   # Defines the root path route ("/")
   # root "posts#index"
 end

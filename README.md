@@ -1,24 +1,32 @@
-# README
+Shopping List Application
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Este es un proyecto de una aplicación de lista de compras desarrollada con Ruby on Rails.
 
-Things you may want to cover:
+Requisitos del Sistema
 
-* Ruby version
+Ruby 3.2.3
+Rails 7.1.3
+SQLite
 
-* System dependencies
+Instalación
 
-* Configuration
+1- Clona este repositorio en tu máquina local: git clone <URL_del_repositorio>
 
-* Database creation
 
-* Database initialization
+2- Instala las dependencias del proyecto ejecutando: bundle install
 
-* How to run the test suite
+3- Crea la base de datos y ejecuta las migraciones: "rails db:create" y luego "rails db:migrate"
 
-* Services (job queues, cache servers, search engines, etc.)
+Ejecución
 
-* Deployment instructions
+Para ejecutar la aplicación, simplemente corre el servidor de Rails: rails server
 
-* ...
+La aplicación estará disponible en http://localhost:3000.
+
+Uso
+
+1- Abre tu navegador web y ve a http://localhost:3000.
+2- Puedes ver la lista de productos pendientes de compra agrupados por fecha.
+3- Puedes agregar nuevos productos haciendo clic en el botón "Add Product".
+4- Marca los productos como comprados haciendo clic en el checkbox correspondiente.
+5- Los productos marcados como comprados se eliminarán automáticamente de la lista.

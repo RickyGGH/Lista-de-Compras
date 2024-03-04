@@ -1,3 +1,4 @@
+<!-- app/views/shopping_lists/index.html.erb -->
 <h1>Shopping List</h1>
 
 <div class="product-form" id="product-form">
@@ -5,7 +6,7 @@
 </div>
 
 <div style="text-align: right; margin-bottom: 10px;">
-  <%= button_to "Add Product", "#", class: "btn btn-primary", id: "add-product-button", remote: true %>
+  <%= button_to "Add Product", "#", class: "btn btn-primary", id: "show-product-form-button", remote: true %>
 </div>
 
 <% if flash[:alert] %>
@@ -14,9 +15,23 @@
   </div>
 <% end %>
 
-<%= render(ProductGroupComponent.new(date: @earliest_date, products: @earliest_products)) %>
+<% if @earliest_date.present? %>
+  <%= render(ProductGroupComponent.new(date: @earliest_date, products: @earliest_products)) %>
+<% else %>
+  <p>No products available.</p>
+<% end %>
 
 <% sorted_other_product_groups = @other_product_groups.sort_by { |date, _| date } %>
 <% sorted_other_product_groups.each do |date, products| %>
-  <%= render(ProductGroupComponent.new(date: date, products: products)) %>
+  <% if date.present? %>
+    <%= render(ProductGroupComponent.new(date: date, products: products)) %>
+  <% else %>
+    <% products.each do |product| %>
+      <% unless product.purchased %>
+        <%= render(ProductCardComponent.new(product: { product: product })) %>
+      <% end %>
+    <% end %>
+  <% end %>
 <% end %>
+
+<%= javascript_include_tag 'shopping_list' %>

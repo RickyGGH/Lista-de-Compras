@@ -1,4 +1,4 @@
-<div class="product-card">
+<div class="product-card" data-product-id="<%= @product[:product].id %>">
   <% if @product[:product].present? %>
     <p><strong>Store Name:</strong> <%= @product[:product].store_name %></p>
     <p><strong>Store Section:</strong> <%= @product[:product].store_section.name %></p>
