@@ -1,7 +1,8 @@
 <h1>Shopping List</h1>
 
-<%= render(ProductGroupComponent.new(date: @latest_date, products: @latest_products)) %>
+<%= render(ProductGroupComponent.new(date: @earliest_date, products: @earliest_products)) %>
 
-<% @other_product_groups.each do |date, products| %>
+<% sorted_other_product_groups = @other_product_groups.sort_by { |date, _| date } %>
+<% sorted_other_product_groups.each do |date, products| %>
   <%= render(ProductGroupComponent.new(date: date, products: products)) %>
 <% end %>
