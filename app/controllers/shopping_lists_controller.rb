@@ -8,5 +8,26 @@ class ShoppingListsController < ApplicationController
 
     # Obtener otros grupos de productos
     @other_product_groups = Product.where.not(purchase_date: @earliest_date).group_by(&:purchase_date)
+
+    # Crear una instancia de producto para el formulario
+    @product = Product.new
+  end
+
+  def create
+    @product = Product.new(product_params)
+    if @product.save
+      # Redirigir a la raíz de la página para refrescar y mostrar el nuevo producto
+      redirect_to root_path, notice: 'Product added successfully!'
+    else
+      # Si hay errores de validación, renderizar de nuevo la página principal con los errores
+      flash.now[:alert] = 'Invalid attributes. Please correct the errors.'
+      render :index
+    end
+  end
+
+  private
+
+  def product_params
+    params.require(:product).permit(:name, :purchase_date, :store_name, :store_section_id, :purchased, :quantity)
   end
 end

@@ -1,5 +1,19 @@
 <h1>Shopping List</h1>
 
+<div class="product-form" id="product-form">
+  <%= render(ProductFormComponent.new) %>
+</div>
+
+<div style="text-align: right; margin-bottom: 10px;">
+  <%= button_to "Add Product", "#", class: "btn btn-primary", id: "add-product-button", remote: true %>
+</div>
+
+<% if flash[:alert] %>
+  <div class="alert alert-danger">
+    <%= flash[:alert] %>
+  </div>
+<% end %>
+
 <%= render(ProductGroupComponent.new(date: @earliest_date, products: @earliest_products)) %>
 
 <% sorted_other_product_groups = @other_product_groups.sort_by { |date, _| date } %>

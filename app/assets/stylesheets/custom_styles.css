@@ -15,3 +15,7 @@
 .product-card label {
   display: block;
 }
+
+.hidden {
+  display: none;
+}
