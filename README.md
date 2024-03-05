@@ -19,7 +19,8 @@ Instalación
 
 2- Instala las dependencias del proyecto ejecutando: bundle install
 
-3- Crea la base de datos y ejecuta las migraciones: "rails db:create" y luego "rails db:migrate"
+3- Crea la base de datos, ejecuta las migraciones e inserta datos necesarios para el correcto funcionamiento: "rails db:create", luego "rails db:migrate" y finalmente "rails db:seed"
+
 
 Ejecución
 
